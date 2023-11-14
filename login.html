@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        /* Gaya umum untuk halaman */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(117, 117, 117);
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Gaya judul utama */
+        h1 {
+            color: #333;
+        }
+
+        /* Gaya untuk logo */
+        .logo {
+            margin-bottom: 20px; /* Jarak antara logo dan judul */
+        }
+
+        /* Gaya untuk gambar logo */
+        .logo img {
+            width: 150px; /* Atur lebar gambar sesuai kebutuhan */
+            border: 2px solid #333; /* Tambahkan border */
+            border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+        }
+
+        /* Gaya untuk formulir login */
+        form {
+            background-color: #fff;
+            border: 1px solid #530505;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Gaya untuk label input */
+        label {
+            display: block;
+            text-align: left;
+        }
+
+        /* Gaya untuk input teks dan password */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* Gaya untuk tombol submit */
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(0, 178, 223);
+        }
+
+        /* Gaya untuk tautan */
+        a {
+            text-decoration: none;
+            color: rgb(0, 211, 248);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <div class="logo">
+        <img src="https://img.freepik.com/premium-vector/anime-logo-mascot-vector_671539-45.jpg?w=740" alt="Logo">
+    </div>
+    
+    <!-- Judul Utama -->
+    <h2>Selamat Datang Di CarWash Kenchana</h2>
+    <h2>Silahkan Login</h2>
+
+    <!-- Formulir Login -->
+    <form id="loginForm" onsubmit="return authenticateUser()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <!-- Tautan untuk Registrasi -->
+    <p>Belum punya akun? <a href="regist.php">Daftar disini</a></p>
+
+    <script>
+        function authenticateUser() {
+            // Gantilah dengan username dan password yang sesuai
+            var validUsername = "myson";
+            var validPassword = "dad";
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === validUsername && password === validPassword) {
+                alert("Login berhasil!");
+                // Redirect ke halaman landing setelah login berhasil
+                window.location.href = "carwash.html";
+                return false; // Jangan kirim formulir
+            } else {
+                alert("Login gagal. Periksa kembali username dan password Anda.");
+                return false; // Jangan kirim formulir
+            }
+        }
+    </script>
+</body>
+</html>
